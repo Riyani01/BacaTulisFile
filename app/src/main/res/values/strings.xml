@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BacaTulis_File</string>
+    <string name="txtcatatan">Total Pengeluaran Harian</string>
+    <string name="textisikantanggal">Isikan Tanggal</string>
+    <string name="textIsi">Tulis pengeluaran di sini</string>
+    <string name="btnSave">Save</string>
+    <string name="btnRead">READ</string>
+    <string name="btnDelete">DELETE</string>
+</resources>

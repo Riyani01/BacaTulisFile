@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<!-- Pada BacaTulisFile ini menggunakan constraintlayout,
+dimana didalamnya terdapat layout untuk mengatur tinggi dan lebar yang masing-masing adalah match parent.
+Disini juga harus mendeklarasikan tools yakni menggunakan MainActivity.kt-->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/txtcatatan"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+<!-- TeksView di atas merupakan teks yang dibuat sebagai judul atau nama yang akan muncul ketika dijalankan agar pengguna dapat mengetahui dengan jelas fungsi aplikasi ini.
+     Di dalam textview ini harus terdapat id yang digunakan sebagai pengenal ketika akan digunakan pada sisi backend.
+     TextView ini berisi tulisan "Total Pengeluaran Harian", dimana dengan judul tersebut diharapkan pengguna akan dengan mudah membuat catatan pengeluaran per hari.
+     TextView ini memiliki warna teks hitam dengan ukuran 22sp dan bergaya teks bold. Hal ini diharapkan pengguna dapat dengan jelas membaca teks tersebut.-->
+
+    <EditText
+        android:id="@+id/editFileName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:autofillHints="Isikan Tanggal"
+        android:ems="10"
+        android:hint="@string/textisikantanggal"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="TextContrastCheck" />
+    <!--EditText diatas merupakan salah satu jenis palette text yakni plan text. Dimana edittext ini berfungsi untuk mengambil inputan data nama file.
+        Agar memudahakan kedepannya maka pada edittext ini dibuatlah sebuah id yakni @+id/editFileName
+        Dalam edittext ini juga terdapat hint berupa teks 'Isikan Tanggal" yang berfungsi untuk mengingatkan kepada user saat pengisian nama file yakni sesuai pada tanggal dimana pengguna menuliskan catatan.
+        ->Hal ini bertujuan jika suatu saat user membutuhkan data pada suatu hari tertentu maka dapat mencari tanggal yang sesuai dengan hari tersebut.
+        Pada edittext ini baik text hint maupun text yang dituliskan memiliki warna masing-masing adalah hitam.-->
+
+    <EditText
+        android:id="@+id/editTeksCatatan"
+        android:layout_width="396dp"
+        android:layout_height="484dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/textIsi"
+        android:inputType="textLongMessage|textMultiLine"
+        android:lines="7"
+        android:textAlignment="gravity"
+        android:textColorHint="@color/black"
+        android:textColorLink="#F44336"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFileName"
+        android:autofillHints="Tulis Pengeluaran di sini" />
+    <!--EditText diatas merupakan salah satu jenis palette text yakni plan text. Dimana edit text ini berfungsi untuk menuliskan catatan pengeluaran pada hari tersebut.
+        Agar memudahakan kedepannya maka pada edittext ini dibuatlah sebuah id yakni @+id/editTeksCatatan
+        Dalam edittext ini juga terdapat hint berupa teks 'Tuliskan pengeluaran di sisni" yang berfungsi untuk mengingatkan kepada user saat pengisian  pada bagian ini harus menuliskan detail pengeluaran uang pada hari dimana file tersebut di buat.nama file yakni sesuai pada tanggal dimana pengguna menuliskan catatan.
+        Pada edittext ini baik text hint maupun text yang dituliskan memiliki warna masing-masing adalah hitam.-->
+
+    <Button
+        android:id="@+id/btnWrite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/btnSave"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnRead"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent" />
+<!--Button ini merupakan button save dimana ketika user atau pengguna telah selesai menuliskan catatan dan telah mengisi nama file maka dapat menekan button ini untuk menyimpan file tersebut kedalam penyimpanan internal.
+    Pada button ini memiliki id sebagai pengenal yakni @+id/btnWrite agar memudahkan ketika dipanggil saat dibutuhkan.
+    Button ini memiliki lebar dan tinggi layout wrap content.
+    Memiliki warna teks putih (@color/white)-->
+
+    <Button
+        android:id="@+id/btnRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnRead"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnWrite"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnWrite" />
+    <!--Button ini merupakan button read dimana ketika user atau pengguna hendak membuka atau mencari untuk dibaca catatan dan telah ada sebelumnya maka dapat menekan button ini untuk mengambil data file dari penyimpanan internal.
+    Pada button ini memiliki id sebagai pengenal yakni @+id/btnRead agar memudahkan ketika dipanggil saat dibutuhkan.
+    Button ini memiliki lebar dan tinggi layout wrap content.
+    Memiliki warna teks putih (@color/white)-->
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnDelete"
+        android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnRead"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnRead" />
+    <!--Button ini merupakan button delete dimana ketika user atau pengguna hendak menghapus catatan yang telah ada sebelumnya maka dapat menekan button ini untuk menghapus data file dari penyimpanan internal.
+        Pada button ini memiliki id sebagai pengenal yakni @+id/btnDelete agar memudahkan ketika dipanggil saat dibutuhkan.
+        Button ini memiliki lebar dan tinggi layout wrap content.
+        Memiliki warna teks putih (@color/white)-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
